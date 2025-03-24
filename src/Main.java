@@ -11,30 +11,28 @@ public class Main {
         }
 
         System.out.println("Задача №2");
-        int ClientOS = 1;
+        int clientOS1 = 1;
         int clientDeviceYear = 2014;
-        if (clientDeviceYear >= 2015) {
-            if (ClientOS == 0) {
-                System.out.println("Установите версию приложения для iOS по ссылке.");
-            } else if (ClientOS == 1) {
-                System.out.println("Установите версию приложения для Android по ссылке.");
-            }
-        } else if (clientDeviceYear < 2015) {
-            if (ClientOS == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else if (ClientOS == 1) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Операционная система не распознана, попробуйте ручное обновление.");
-            }
+        if (clientOS1 == 0 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        } else if (clientOS1 == 1 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке.");
+        } else if (clientOS1 == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS1 == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Операционная система не распознана, попробуйте ручное обновление.");
         }
 
         System.out.println("Задача №3");
-        int year = 2012;
-        if (year % 4 == 0 && year > 1584) {
-            System.out.println(year + " год является високосным.");
-        } else if (year != 0 && year > 1584) {
-            System.out.println(year + " год не является високосным.");
+        int year = 1900;
+        if (year >= 1584) {
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                System.out.println(year + " год является високосным.");
+            } else {
+                System.out.println(year + " год не является високосным.");
+            }
         } else {
             System.out.println("Високосный год был введён только с 1584.");
         }
